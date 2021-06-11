@@ -1,0 +1,27 @@
+---
+title: "Untitled"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(mongolite)
+```
+
+**Libraries**
+
+  - tidyverse
+  - monogolite
+
+```{r source}
+source("../data/external/01_conn_mongodb.R")
+```
+
+### Loading data
+
+```{r loading_data}
+raw_data <- raw_conn$find(query = "{}",
+                          limit = 5)
+```
+
